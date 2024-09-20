@@ -2,9 +2,8 @@ from django.urls import URLPattern, path
 from typing import List
 from . import views
 
-app_name: str = 'core'
+app_name: str = 'account'
 
 urlpatterns: List[URLPattern] = [
-    path('', views.homepage, name='homepage'),
-    path('about/', views.about, name='about'),
+    path('signup/', views.signup, name='signup'),
 ]

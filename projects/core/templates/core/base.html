@@ -7,12 +7,12 @@
 </head>
 <body>
     <nav class="py-6 px-8 flex items-center justify-between bg-orange-900">
-        <h1 class="text-2xl text-white">Projects</h1>
+        <h1 class="text-2xl text-white"><a href="{% url 'core:homepage' %}" class="text-white">Project Manager</a></h1>
 
         <div class="space-x-4">
-            <a href="#" class="text-white">About</a>
+            <a href="{% url 'core:about' %}" class="text-white">About</a>
 
-            <a href="#" class="py-6 px-8 text-white bg-orange-700">Sign Up</a>
+            <a href="{% url 'account:signup' %}" class="py-6 px-8 text-white bg-orange-700">Sign Up</a>
             <a href="#" class="py-6 px-8 text-white bg-orange-700">Login</a>
         </div>
     </nav>

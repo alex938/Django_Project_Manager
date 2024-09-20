@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="max-w-xl mx-auto bg-orange-900 text-center text-white">
+    <h1 class="text-3xl">SIGN UP</h1>
+
+    <form class="px-8 mt-6 space-y-6" method="post" action='.'>
+        {% csrf_token %}
+        <div>
+            <label>Name</label><br>
+            <input type="test" class="w-full py-2 px-6 bg-orange-700">
+        </div>
+
+        <div>
+            <label>Username (e-mail address)</label><br>
+            <input type="email" class="w-full py-2 px-6 bg-orange-700">
+        </div>
+
+        <div>
+            <label>Password</label><br>
+            <input type="password" class="w-full py-2 px-6 bg-orange-700">
+        </div>
+
+        <div>
+            <label>Confirm Password</label><br>
+            <input type="password" class="w-full py-2 px-6 bg-orange-700">
+        </div>
+
+        <div class="py-3">
+            <button class="py-6 px-8 bg-orange-700 text-white">SUBMIT</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
