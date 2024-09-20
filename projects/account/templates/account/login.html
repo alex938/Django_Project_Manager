@@ -3,28 +3,18 @@
 {% block content %}
 
 <div class="max-w-xl mx-auto bg-orange-900 text-center text-white">
-    <h1 class="text-3xl">SIGN UP</h1>
+    <h1 class="text-3xl">LOGIN</h1>
 
     <form class="px-8 mt-6 space-y-6" method="post" action='.'>
         {% csrf_token %}
         <div>
-            <label>Name</label><br>
-            <input name="name" type="test" class="w-full py-2 px-6 bg-orange-700">
-        </div>
-
-        <div>
-            <label>Username (e-mail address)</label><br>
+            <label>Username</label><br>
             <input name="email" type="email" class="w-full py-2 px-6 bg-orange-700">
         </div>
 
         <div>
             <label>Password</label><br>
             <input name="password" type="password" class="w-full py-2 px-6 bg-orange-700">
-        </div>
-
-        <div>
-            <label>Confirm Password</label><br>
-            <input name="password_confirm" type="password" class="w-full py-2 px-6 bg-orange-700">
         </div>
 
         <div class="py-3">

@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(blank=True, null=True)
-    user_manager = CustomUserManager()
+    objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
