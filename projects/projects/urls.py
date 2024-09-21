@@ -22,5 +22,6 @@ from typing import List
 urlpatterns: List[URLPattern] = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('', include('account.urls'))
+    path('', include('account.urls')),
+    path('project/', include('project.urls')),
 ]
