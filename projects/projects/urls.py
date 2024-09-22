@@ -24,4 +24,5 @@ urlpatterns: List[URLPattern] = [
     path('', include('core.urls')),
     path('', include('account.urls')),
     path('project/', include('project.urls')),
+    path('project/<uuid:p_id>/', include('tasks.urls')),
 ]
