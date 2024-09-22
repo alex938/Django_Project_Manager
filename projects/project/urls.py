@@ -9,4 +9,5 @@ urlpatterns: List[URLPattern] = [
     path('add_project/', views.add, name='add'),
     path('<uuid:primary_key>/', views.project_detail, name='project_detail'),
     path('<uuid:primary_key>/edit/', views.edit, name='edit'),
+    path('<uuid:primary_key>/delete/', views.delete, name='delete'),
 ]

@@ -4,12 +4,14 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def project(request):
-    projects = Project.objects.filter(created_by=request.user)
+    #projects = Project.objects.filter(created_by=request.user)
+    projects = request.user.projects.all()
     return render(request, 'project/projects.html', {'projects': projects})
 
 @login_required
 def project_detail(request, primary_key):
-    project = Project.objects.filter(created_by=request.user).get(pk=primary_key)
+    #project = Project.objects.filter(created_by=request.user).get(pk=primary_key)
+    project = request.user.projects.all().get(pk=primary_key) #can use related name instead if we are defining it in foreign key
     return render(request, 'project/project.html', {'project': project, 'user': request.user})
 
 @login_required
@@ -41,3 +43,10 @@ def edit(request, primary_key):
             return redirect('/project/')
         
     return render(request, 'project/edit.html', {'project': project})
+
+@login_required
+def delete(request, primary_key):
+    project = Project.objects.filter(created_by=request.user).get(pk=primary_key)
+    project.delete()
+        
+    return redirect('/project')
