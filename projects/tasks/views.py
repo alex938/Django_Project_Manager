@@ -52,3 +52,10 @@ def edittasklist(request, p_id, pk):
         'project':project,
         'taskl':taskl
     })
+
+@login_required
+def delete(request, p_id, pk):
+    project = Project.objects.filter(created_by=request.user).get(pk=p_id)
+    taskl = Tasks.objects.filter(project=project).get(pk=pk)
+    taskl.delete()
+    return redirect('/project/{}'.format(p_id))
