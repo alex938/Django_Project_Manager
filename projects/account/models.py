@@ -2,7 +2,6 @@ from typing import Any
 from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
-# Create your models here.
 
 class CustomUserManager(UserManager):
     def _create_user_(self, name, email, password, **extra_fields):

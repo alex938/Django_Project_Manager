@@ -13,11 +13,9 @@ def signup(request):
 
         if all([name, email, password, password_confirm]):
             new_user = User.objects.create_user(name, email, password)
-
             return redirect('/login/')
         else:
             print("Field missing")
-
         print(request.POST)
     else:
         print('just show form')
